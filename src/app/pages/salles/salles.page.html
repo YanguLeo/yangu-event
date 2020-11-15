@@ -9,6 +9,24 @@
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
+<!-- 
+<ion-menu side="start" menuId="first" contentId="main">
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>Start Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-item>Menu Item</ion-item>
+      <ion-item>Menu Item</ion-item>
+      <ion-item>Menu Item</ion-item>
+      <ion-item>Menu Item</ion-item>
+      <ion-item>Menu Item</ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu> -->
+
 </ion-header>
 
 <ion-content>
@@ -16,7 +34,7 @@
   <div class="card-salle-wrapper">
     <ion-card class="card-salle" *ngFor="let item of salles" >
   
-      <img [src]="item.image.getImage()" alt="" srcset="">
+      <img [src]="item.getImage()" alt="" srcset="">
       <ion-card-header>
       
         <ion-card-subtitle>
@@ -35,8 +53,9 @@
     
       <ion-card-content>
         <div class="buttons-actions">
-          <ion-button color="primary" size="small" [routerLink]="['/salles-details']">Détail</ion-button>
-          <ion-button color="secondary" size="small">Réserver</ion-button>
+          <ion-button color="primary" size="medium"
+            (click)="showDetails(item)">Détail</ion-button>
+          <ion-button color="secondary" size="medium">Réserver</ion-button>
         </div>
       </ion-card-content>
     </ion-card>

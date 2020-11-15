@@ -1,9 +1,43 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>sallesDetails</ion-title>
+
+    <ion-buttons slot="primary">
+      <ion-button color="danger" shape="round" [routerLink]="['/tabs/salles']">
+        <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-card>
+    <div class="poster">
+      <img [src]="salle.getImage()" alt="" srcset="">
+    </div>
+    <ion-card-header> 
+      <ion-card-title>
+       <!--  <ion-icon slot="start" name="business-outline"></ion-icon>  -->
+        {{salle.nom}} 
+        <ion-chip>
+          <ion-icon name="pricetags"></ion-icon>
+          <ion-label>{{salle.getPrice()}}</ion-label>
+        </ion-chip>
+      </ion-card-title>
+      
+      <div class="item">
+        <span class="lbl">Adresse</span>
+        <p>{{ salle.adresse}}</p>
+      </div>
+      <div class="item">
+        <span class="lbl">Commune</span>
+        <p>{{ salle.commune}}</p>
+      </div>
+      <div class="item">
+        <span class="lbl">Occupation</span>
+        <p>{{ salle.faculteOccupation}}</p>
+      </div>
+   </ion-card-header>
+  </ion-card>
+ 
 </ion-content>

@@ -15,6 +15,10 @@ const routes: Routes = [
     redirectTo: 'tabs',
     pathMatch : 'full'
   },
+  {
+    path: 'reserver',
+    loadChildren: () => import('./pages/reserver/reserver.module').then( m => m.ReserverPageModule)
+  },
 
 ];
 

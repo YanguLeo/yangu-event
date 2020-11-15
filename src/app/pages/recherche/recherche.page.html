@@ -10,7 +10,7 @@
   <div class="card-salle-wrapper">
     <ion-card class="card-salle" *ngFor="let item of sallesFiltred" >
   
-      <img [src]="getImage(item.image)" alt="" srcset="">
+      <img [src]="item.getImage()" alt="" srcset="">
       <ion-card-header>
 
         <ion-card-subtitle>

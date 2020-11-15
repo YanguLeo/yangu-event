@@ -1,0 +1,22 @@
+.poster{
+    background-color: #eee;
+    text-align: center;
+    img{
+        width: 100%;
+        max-width: 500px ;
+    }
+}
+
+.item{
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #aaa;
+    p{
+        margin: 0px;
+        font-size: 20px;
+    }
+    .lbl{
+        color: #aaa;
+        font-size: 14px;
+    }
+}

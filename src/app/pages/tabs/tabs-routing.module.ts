@@ -10,10 +10,10 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo : 'salle'
+        redirectTo : 'salles'
       },
       {
-        path: 'salle',
+        path: 'salles',
         loadChildren: () => import('../salles/salles.module').then( m => m.SallesPageModule)
       },
       {
@@ -23,6 +23,10 @@ const routes: Routes = [
       {
         path: 'reservation',
         loadChildren: () => import('../reservation/reservation.module').then( m => m.ReservationPageModule)
+      },
+      {
+        path: 'salles-details',
+        loadChildren: () => import('../salles-details/salles-details.module').then( m => m.SallesDetailsPageModule)
       }
     ]
   },

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { SalleService } from '../../services/salle.service';
 
 @Component({
@@ -8,13 +9,20 @@ import { SalleService } from '../../services/salle.service';
 })
 export class RecherchePage implements OnInit {
   sallesFiltred = [];
-  salles = [] ;
+  salles = [];
+  s_salles: Subscription;
 
   constructor(private sallesService: SalleService) {
-    this.salles = this.sallesService.salles ;
   }
 
   ngOnInit() {
+    this.s_salles = this.sallesService.b_salles.subscribe(x => {
+      this.salles = x
+    })
+  }
+
+  ngOnDestroy(): void {
+    this.s_salles.unsubscribe()
   }
 
   search(value) {
