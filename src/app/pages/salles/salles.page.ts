@@ -1,4 +1,4 @@
-import { SallesService } from './../../services/salles.service';
+import { SalleService } from '../../services/salle.service';
 import { Component, OnInit } from '@angular/core';
 import { Salle } from 'src/app/models/salle';
 
@@ -11,15 +11,11 @@ export class SallesPage implements OnInit {
 
   salles : Array<Salle> = [] ;
 
-  constructor(private sallesService: SallesService) {
+  constructor(private sallesService: SalleService) {
     this.salles = this.sallesService.salles ;
   }
 
   ngOnInit() {
-  }
-
-  getImage(image){
-    return 'assets/images/' + image;
   }
 
 }

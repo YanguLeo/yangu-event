@@ -5,28 +5,30 @@
 </ion-header>
 
 <ion-content>
-  <div class="card-salle-wrapper"> 
-  <ion-card *ngFor="let item of reservations">
-    <img [src]="item.salle.getImage()" alt="" srcset="">
+  <div class="card-reservation-wrapper"> 
+  <ion-card class="card-reservation" *ngFor="let item of reservations">
+    <div class="pic">
+      <img [src]="item.salle.getImage()" alt="" srcset="">
+    </div>
 
     <ion-item href="#">
       <ion-icon name="wine" slot="start"></ion-icon>
-      <ion-label>{{item.salle.nom}}</ion-label>
+      <p>{{item.salle.nom}}</p>
     </ion-item>
 
     <ion-item href="#">
       <ion-icon name="wine" slot="start"></ion-icon>
-      <ion-label>{{item.dateDebut}} - {{item.dateFin}}</ion-label>
+      <p>{{item.dateDebut}} - {{item.dateFin}}</p>
     </ion-item>
   
     <ion-item class="ion-activated">
       <ion-icon name="warning" slot="start"></ion-icon>
-      <ion-label>{{item.prix}} {{item.devise.nom}}</ion-label>
+      <p>{{item.prix}} {{item.devise.nom}}</p>
     </ion-item>
   
     <ion-item>
       <ion-icon name="walk" slot="start"></ion-icon>
-      <ion-label>{{item.reservationTypeId}}</ion-label>
+      <p>{{item.typeReservation}}</p>
     </ion-item>
   </ion-card>
 </div>

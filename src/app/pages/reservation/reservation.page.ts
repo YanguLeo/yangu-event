@@ -1,4 +1,4 @@
-import { ReservationsService } from '../../services/reservations.service';
+import { ReservationService } from '../../services/reservation.service';
 import { Component, OnInit } from '@angular/core';
 import { SubjectSubscriber } from 'rxjs/internal/Subject';
 import { Subscription } from 'rxjs';
@@ -14,7 +14,7 @@ export class ReservationPage implements OnInit {
   reservations = [];
 
 
-  constructor(private reservationsService: ReservationsService) {
+  constructor(private reservationsService: ReservationService) {
   }
 
   ngOnInit() {

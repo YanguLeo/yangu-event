@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SallesService } from './../../services/salles.service';
+import { SalleService } from '../../services/salle.service';
 
 @Component({
   selector: 'app-recherche',
@@ -10,7 +10,7 @@ export class RecherchePage implements OnInit {
   sallesFiltred = [];
   salles = [] ;
 
-  constructor(private sallesService: SallesService) {
+  constructor(private sallesService: SalleService) {
     this.salles = this.sallesService.salles ;
   }
 

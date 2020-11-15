@@ -1,7 +1,6 @@
-import { Client } from './../services/Client';
-import { Salle } from 'src/app/services/salle';
-import { Interface } from "readline";
+import { Client } from './Client';
 import { Devise } from './devise';
+import { Salle } from './salle';
 
 export class ReservationInterface {
   id: Number;
@@ -9,7 +8,7 @@ export class ReservationInterface {
   dateFin: String;
   prix: String; 
   deviseId: Number;
-  reservationTypeId: String;
+  typeReservation: String;
   clientId: Number;
   salleId: Number;
   salle ?: Salle;
@@ -25,7 +24,7 @@ export class Reservation extends ReservationInterface {
     this.dateFin = data.dateFin
     this.prix = data.prix
     this.deviseId = data.deviseId
-    this.reservationTypeId = data.reservationTypeId
+    this.typeReservation = data.typeReservation
     this.clientId = data.clientId
     this.salleId = data.salleId
   }

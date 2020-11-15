@@ -16,7 +16,7 @@
   <div class="card-salle-wrapper">
     <ion-card class="card-salle" *ngFor="let item of salles" >
   
-      <img [src]="getImage(item.image)" alt="" srcset="">
+      <img [src]="item.image.getImage()" alt="" srcset="">
       <ion-card-header>
       
         <ion-card-subtitle>
