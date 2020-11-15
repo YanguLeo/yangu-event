@@ -1,0 +1,7 @@
+{
+  "name": "Yangu EVENT",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

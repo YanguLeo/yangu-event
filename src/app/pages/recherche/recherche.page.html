@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar color="warning">
+    <!-- Searchbar with danger color -->
+    <ion-searchbar color="white" (ionChange)="search($event.target.value)" ></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="card-salle-wrapper">
+    <ion-card class="card-salle" *ngFor="let item of sallesFiltred" >
+  
+      <img [src]="getImage(item.image)" alt="" srcset="">
+      <ion-card-header>
+
+        <ion-card-subtitle>
+          <div class="subtitle-content">
+            <ion-chip>
+              <ion-icon name="pricetags"></ion-icon>
+              <ion-label>{{item.prix}} {{item.devise}}</ion-label>
+            </ion-chip>
+            <div>
+              {{item.commune}}
+            </div>
+          </div>
+        </ion-card-subtitle>
+        <ion-card-title>{{item.nom}}</ion-card-title>
+      </ion-card-header>
+    
+
+        <ion-card-content>
+          <div class="buttons-actions">
+            <ion-button color="primary" size="small">Détail</ion-button>
+            <ion-button color="secondary" size="small">Réserver</ion-button>
+          </div>
+        </ion-card-content>
+    </ion-card>
+  </div>
+  <div>
+    <ion-card>
+
+      <ion-content>
+        <ion-toolbar>
+          <ion-title>
+            Ici
+          </ion-title>
+        </ion-toolbar>
+      </ion-content>
+    </ion-card>
+  </div>
+
+</ion-content>

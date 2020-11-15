@@ -1,0 +1,135 @@
+var env = document.currentScript.getAttribute('env') || "prod";
+var site = document.currentScript.getAttribute('site') || "tijd";
+var format = document.currentScript.getAttribute('format') || "leaderboard";
+var debug = 'true' === (document.currentScript.getAttribute('debug') || "false");
+var baseUrl = "https://immoportal.mediafin.be/immocarousel/2/";
+var tracker = "tr.mediafin.be";
+var trackerJs = "trjs.mediafin.be";
+switch (env) {
+  case "local":
+    baseUrl = "http://localhost:4200/";
+    tracker = "tr.acceptance.mediafin.be";
+    trackerJs = "trjs.acceptance.mediafin.be";
+    break;
+  case "test":
+    baseUrl = "https://immoportal.acceptance.mediafin.be/immocarousel/2/";
+    tracker = "tr.acceptance.mediafin.be";
+    trackerJs = "trjs.acceptance.mediafin.be";
+    break;
+}
+var width = 840;
+var height = 150;
+switch (format) {
+  case "leaderboard": width = 840; height = 150;break;
+  case "billboard": width = 970; height = 250;break;
+  case "halfpage": width = 300; height = 600;break;
+  case "rectangle": width = 300; height = 250;break;
+}
+var contentWritten = false;
+var _immo_carousel = document.createElement("immo-carousel");
+
+function writeLog(message) {
+  if (debug)
+    console.log("log:", message);
+}
+
+function create_tracker() {
+  (function(p, l, o, w, i, n, g) {
+    if (!p[i]) {
+      p.GlobalSnowplowNamespace = p.GlobalSnowplowNamespace || [];
+      p.GlobalSnowplowNamespace.push(i);
+      p[i] = function() {
+        (p[i].q = p[i].q || []).push(arguments);
+      };
+      p[i].q = p[i].q || [];
+      n = l.createElement(o);
+      g = l.getElementsByTagName(o)[0];
+      n.async = 1;
+      n.src = w;
+      g.parentNode.insertBefore(n, g);
+    }
+  }(window, document, "script", "https://" + trackerJs + "/2.9.2/trmfn.js", "trmfn"));
+
+  window.trmfn("newTracker", "cf", tracker, { // Initialise a tracker
+    appId: "mediafin",
+    cookieDomain: "." + site + ".be",
+    contexts: {
+      webPage: true,
+      performanceTiming: false,
+      gaCookies: true,
+      geolocation: false,
+      forceSecureTracker: true
+    }
+  });
+}
+
+function write_script_tag(script) {
+  var scriptTag = document.createElement("script");
+  scriptTag.type = "text/javascript";
+  scriptTag.src = baseUrl + script;
+  document.body.appendChild(scriptTag);
+}
+
+function write_link_tag(link) {
+  var linkTag = document.createElement("link");
+  linkTag.type = "text/css";
+  linkTag.rel = "stylesheet";
+  linkTag.href = baseUrl + link;
+  document.body.appendChild(linkTag);
+}
+
+function write_content() {
+  if (!contentWritten) {
+    create_tracker();
+    _immo_carousel.id = "immo-carousel";
+    _immo_carousel.setAttribute("site", site);
+    _immo_carousel.setAttribute("campaign-format", format);
+    _immo_carousel.setAttribute("iframed", "true");
+    _immo_carousel.setAttribute("utm-source", "adhese");
+    _immo_carousel.setAttribute("safe-frame-in-view", "false");
+    document.body.appendChild(_immo_carousel);
+    write_script_tag("runtime.js");
+    write_script_tag("polyfills.js");
+    write_script_tag("scripts.js");
+    write_script_tag("main.js");
+    write_link_tag("styles.css");
+    contentWritten = true;
+  }
+}
+
+function updateInViewDisplay() {
+  var geom = extern.geom();
+  writeLog("self: " + geom.self);
+  writeLog("win: " + geom.win);
+  writeLog("Viewable: " + geom.self.iv * 100 + "%");
+  if (geom.self.iv > 0 && geom.self.iv <= 1) {
+    _immo_carousel.setAttribute("safe-frame-in-view", "true");
+  } else {
+    _immo_carousel.setAttribute("safe-frame-in-view", "false");
+  }
+}
+
+function status_update(status, data) {
+  writeLog('Received status update: ' + status + ": " + JSON.stringify(data));
+  if (status === "geom-update") {
+    updateInViewDisplay();
+  }
+}
+
+var extern = window.extern || $sf.ext;
+
+if (extern) {
+  try {
+    extern.register(width, height, status_update);
+
+    (function () {
+      window.setTimeout(function () {
+        write_content();
+        updateInViewDisplay();
+      }, 1000);
+    })();
+
+  } catch (e) {
+    console.error("Exception or no safeframes available: " + e.message);
+  }
+}

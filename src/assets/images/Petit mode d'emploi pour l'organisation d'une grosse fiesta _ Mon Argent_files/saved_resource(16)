@@ -1,0 +1,8 @@
+//empty position template
+function adh_removePopup(){
+  if(document.getElementById("marketingcontainer")){
+    var adh_marketing_container = document.getElementById("marketingcontainer").parentElement;
+    if(adh_marketing_container)adh_marketing_container.innerHTML = "";
+}
+}
+adh_removePopup();

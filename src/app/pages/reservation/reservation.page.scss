@@ -1,0 +1,29 @@
+.card-reservation-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.card-reservation{
+    width: calc(50% - 20px);
+    min-width: 200px;
+    max-width: 280px;
+    img{
+        width: 100%;
+    }
+}
+.subtitle-content{
+    ion-chip{
+        float: right;
+        margin-left: 10px;
+        margin-top: -10px;
+    }
+}
+ion-card-title{
+    clear: both;
+}
+.buttons-actions{
+    display: flex;
+    ion-button{
+        text-transform: capitalize !important;
+    }
+}

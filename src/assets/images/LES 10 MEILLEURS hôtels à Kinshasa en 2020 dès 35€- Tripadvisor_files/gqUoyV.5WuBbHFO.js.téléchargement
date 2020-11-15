@@ -1,0 +1,1 @@
+(this.$WP=this.$WP||[]).push(["gqUoyV",(e,t)=>{"use strict";var r=({actorFields:e=[],contentFields:t=[]})=>({actor:r,content:o})=>e.map(e=>r[e]).every(Boolean)&&t.map(e=>o[e]).every(Boolean);return[()=>{e("requireFields",r)},[]]},[]]);
