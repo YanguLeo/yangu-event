@@ -17,8 +17,7 @@
     </div>
     <ion-card-header> 
       <ion-card-title>
-       <!--  <ion-icon slot="start" name="business-outline"></ion-icon>  -->
-        {{salle.nom}} 
+          {{salle.nom}} 
         <ion-chip>
           <ion-icon name="pricetags"></ion-icon>
           <ion-label>{{salle.getPrice()}}</ion-label>
@@ -39,5 +38,8 @@
       </div>
    </ion-card-header>
   </ion-card>
+  <div class="buttons-actions">
+    <ion-button color="secondary" expand="full" size="large" [routerLink]="['/tabs/reserver']">Réserver</ion-button>
+  </div>
  
 </ion-content>

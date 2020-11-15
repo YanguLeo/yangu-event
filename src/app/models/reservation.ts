@@ -11,9 +11,11 @@ export class ReservationInterface {
   typeReservation: String;
   clientId: Number;
   salleId: Number;
+  entrepriseId: Number;
   salle ?: Salle;
   client ?: Client;
   devise ?: Devise;
+  entreprise ?: String;
 }
 
 export class Reservation extends ReservationInterface {
@@ -27,6 +29,7 @@ export class Reservation extends ReservationInterface {
     this.typeReservation = data.typeReservation
     this.clientId = data.clientId
     this.salleId = data.salleId
+    this.entrepriseId = data.entrepriseId
   }
   getPriceUnit(){
     return this.prix + " " + this.deviseId

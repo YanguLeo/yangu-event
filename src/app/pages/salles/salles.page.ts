@@ -35,5 +35,12 @@ export class SallesPage implements OnInit {
     };
     this.router.navigate(['/tabs/salles-details'], navigationExtras);
   }
-
+  showReservation(salle : Salle) {
+    let navigationExtras: NavigationExtras = {
+      state: {
+        salle: salle
+      }
+    };
+    this.router.navigate(['/tabs/reserver'], navigationExtras);
+  }
 }

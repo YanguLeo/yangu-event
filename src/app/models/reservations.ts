@@ -10,6 +10,7 @@ const reservationsData : Array<ReservationInterface> = [
     typeReservation : 'Anniversaire' ,
     clientId : 1 ,
     salleId : 1,
+    entrepriseId : 1
   },
   {
     id: 2,
@@ -20,6 +21,7 @@ const reservationsData : Array<ReservationInterface> = [
     typeReservation : 'Mariage' ,
     clientId : 2 ,
     salleId : 1,
+    entrepriseId : 1,
   },
   {
     id: 3,
@@ -29,7 +31,8 @@ const reservationsData : Array<ReservationInterface> = [
     deviseId: 2,
     typeReservation : 'Anniversaire' ,
     clientId : 2 ,
-    salleId : 1,
+    salleId: 1,
+    entrepriseId : 1,
   },
 
   
