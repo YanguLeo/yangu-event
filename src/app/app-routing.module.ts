@@ -19,6 +19,10 @@ const routes: Routes = [
     path: 'reserver',
     loadChildren: () => import('./pages/reserver/reserver.module').then( m => m.ReserverPageModule)
   },
+  {
+    path: 'menu',
+    loadChildren: () => import('./pages/menu/menu.module').then( m => m.MenuPageModule)
+  },
 
 ];
 

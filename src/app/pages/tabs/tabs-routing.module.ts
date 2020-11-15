@@ -12,10 +12,10 @@ const routes: Routes = [
         path: '',
         redirectTo : 'salles'
       },
-     /*  {
-        path: 'salles',
-        loadChildren: () => import('../salles/salles.module').then( m => m.SallesPageModule)
-      }, */
+      {
+        path: 'login',
+        loadChildren: () => import('../login/login.module').then( m => m.LoginPageModule)
+      },
       {
         path: 'salles',
         loadChildren: () => import('../salles/salles.module').then( m => m.SallesPageModule)
