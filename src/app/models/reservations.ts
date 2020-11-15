@@ -1,4 +1,4 @@
-import { Reservation , ReservationInterface} from './Reservation';
+import { Reservation , ReservationInterface} from './reservation';
 
 const reservationsData : Array<ReservationInterface> = [
   {

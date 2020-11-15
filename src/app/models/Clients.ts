@@ -1,4 +1,4 @@
-import { Client , ClientInterface} from './Client';
+import { Client , ClientInterface} from './client';
 
 const clientsData : Array<ClientInterface> = [
   {

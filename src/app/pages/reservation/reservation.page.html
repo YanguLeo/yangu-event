@@ -6,11 +6,7 @@
 
 <ion-content>
   <div class="card-salle-wrapper"> 
-  <ion-card *ngFor="let item of reservation">
-    <ion-item href="#">
-      <ion-icon name="person" slot="start"></ion-icon>
-      <ion-label> {{item.clientId}}</ion-label>
-    </ion-item>
+  <ion-card *ngFor="let item of reservations">
   
     <ion-item href="#">
       <ion-icon name="wine" slot="start"></ion-icon>
@@ -19,7 +15,7 @@
   
     <ion-item class="ion-activated">
       <ion-icon name="warning" slot="start"></ion-icon>
-      <ion-label>{{item.prix}} {{item.devise}}</ion-label>
+      <ion-label>{{item.prix}} {{item.devise.name}}</ion-label>
     </ion-item>
   
     <ion-item>

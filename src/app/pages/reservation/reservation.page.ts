@@ -1,5 +1,7 @@
 import { ReservationsService } from '../../services/reservations.service';
 import { Component, OnInit } from '@angular/core';
+import { SubjectSubscriber } from 'rxjs/internal/Subject';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-reservation',
@@ -8,14 +10,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReservationPage implements OnInit {
 
-  reservation = [] ;
+  s_reservation: Subscription;
+  reservations = [];
 
-  constructor(private ReservationsService: ReservationsService) {
-    this.reservation = this.ReservationsService.reservations ;
-    console.log(this.reservation)
+
+  constructor(private reservationsService: ReservationsService) {
   }
 
   ngOnInit() {
+    this.s_reservation = this.reservationsService.b_reservations.subscribe(x => {
+      this.reservations = x
+    })
+  }
+
+  ngOnDestroy(): void {
+    this.s_reservation.unsubscribe()
   }
 
   getImage(image){
