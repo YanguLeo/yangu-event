@@ -1,0 +1,31 @@
+.card-reserver-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.card-salle{
+    width: calc(50% - 20px);
+    min-width: 300px;
+    max-width: 380px;
+    img{
+        width: 100%;
+        
+    }
+}
+.pic{
+    background-color: #eee;
+    img{
+        width: 100%;
+        max-width: 500px;
+    }
+}
+.subtitle-content{
+    ion-chip{
+        float: right;
+        margin-left: 10px;
+        margin-top: -10px;
+    }
+}
+ion-card-title{
+    clear: both;
+}

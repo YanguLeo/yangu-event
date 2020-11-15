@@ -1,37 +1,44 @@
 
 
 <ion-content>
-  
-  <ion-card>
-   
-    <ion-list>
-      <ion-item>
-        <ion-label color="primary" position="floating">Name</ion-label>
-        <ion-input autocorrect="on" autofocus="on" clearInput="true" clearOnEdit="true" color="primary" inputmode="text" placeholder="Enter your name" required="true"></ion-input>
-        <ion-icon name="person" color="primary" slot="end"></ion-icon>
+  <div class="login-content">
+    <ion-card>
+      <ion-list>
+        <ion-item>
+          <ion-label color="primary" position="floating">Email ou Pseudo</ion-label>
+          <ion-input autocorrect="on" autofocus="on" clearInput="true" clearOnEdit="true" color="primary" inputmode="text" placeholder="Entre votre email/pseudo" required="true"></ion-input>
+          <ion-icon name="person" color="primary" slot="end"></ion-icon>
+        </ion-item>
+      
+        <ion-item>
+          <ion-label color="primary" position="floating">PMot de passe</ion-label>
+          <ion-input autocorrect="on" autofocus="on" clearInput="true" clearOnEdit="true" color="primary" inputmode="text" placeholder="Entre votre mot de passe" required="true"></ion-input>
+          <ion-icon name="eye" color="primary" slot="end"></ion-icon>
+        </ion-item>
+      </ion-list>
+      <ion-item lines="none">
+        <ion-button color="tertiary" fill="clear" class="btn-mdpo">Mot de passe oublié ?</ion-button>
       </ion-item>
+  
+      <br>
+
+      <div>
+        <ion-button color="tertiary" expand="block" shape="round" >Connexion</ion-button>
+        <ion-button color="tertiary" expand="block" shape="round" fill="outline">Inscription</ion-button>
+      </div>
     
-      <ion-item>
-        <ion-label color="primary" position="floating">Pass Word</ion-label>
-        <ion-input autocorrect="on" autofocus="on" clearInput="true" clearOnEdit="true" color="primary" inputmode="text" placeholder="Enter your password" required="true"></ion-input>
-        <ion-icon name="eye" color="primary" slot="end"></ion-icon>
-      </ion-item>
-    </ion-list>
-    <ion-item lines="none">
-      <ion-button color="tertiary" fill="clear" class="btn-mdpo">Mot de passe oublié ?</ion-button>
-    </ion-item>
-        <ion-button color="tertiary" expand="block" shape="round" fill="outline">Connexion</ion-button>
-          <br>
-        <ion-button color="tertiary" expand="block" shape="round">Inscription</ion-button>
-  
-  <div class="flex">
-     <ion-button color="facebook" shape="round">
-        <ion-icon slot="start" name="logo-facebook"></ion-icon>
-        Facebook 
-      </ion-button>
-  <ion-button color="google" shape="round">
-    <ion-icon slot="start" name="logo-google"></ion-icon>
-    Google
-  </ion-button>
-</div></ion-card>
+      <br>
+
+      <div style="display: flex">
+        <ion-button color="tertiary" shape="round" style="width:50%">
+          <ion-icon name="logo-facebook"></ion-icon>
+          &nbsp; Facebook 
+        </ion-button>
+        <ion-button color="danger" shape="round" style="width:50%">
+          <ion-icon name="logo-google"></ion-icon>
+          &nbsp; Google
+        </ion-button>
+      </div>
+    </ion-card>
+  </div>
 </ion-content>

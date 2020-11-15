@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { NavigationExtras, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { Salle } from 'src/app/models/salle';
 import { SalleService } from '../../services/salle.service';
 
 @Component({
@@ -12,7 +14,7 @@ export class RecherchePage implements OnInit {
   salles = [];
   s_salles: Subscription;
 
-  constructor(private sallesService: SalleService) {
+  constructor(private sallesService: SalleService, private router : Router) {
   }
 
   ngOnInit() {
@@ -51,4 +53,12 @@ export class RecherchePage implements OnInit {
     return 'assets/images/' + image;
   }
 
+  reserver(salle : Salle) {
+    let navigationExtras: NavigationExtras = {
+      state: {
+        salle: salle
+      }
+    };
+    this.router.navigate(['/tabs/reserver'], navigationExtras);
+  }
 }

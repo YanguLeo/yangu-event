@@ -30,8 +30,10 @@
 
         <ion-card-content>
           <div class="buttons-actions">
-            <ion-button color="primary" size="small">Détail</ion-button>
-            <ion-button color="secondary" size="small">Réserver</ion-button>
+            <ion-button color="primary" size="small"
+              (click)="showDetails(item)">Détail</ion-button>
+            <ion-button color="secondary" size="small"
+              (click)="reserver(item)">Réserver</ion-button>
           </div>
         </ion-card-content>
     </ion-card>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
 import { Salle } from 'src/app/models/salle';
 
 @Component({
@@ -23,4 +23,12 @@ export class SallesDetailsPage implements OnInit {
   ngOnInit() {
   }
 
+  reserver(salle : Salle) {
+    let navigationExtras: NavigationExtras = {
+      state: {
+        salle: salle
+      }
+    };
+    this.router.navigate(['/tabs/reserver'], navigationExtras);
+  }
 }

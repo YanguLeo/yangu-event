@@ -1,9 +1,43 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Reserve avec Yangu EVENT</ion-title>
+    <ion-title>Reservez Ici</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-card class="card-reserver" >
+    <div class="pic">
+      <img [src]="salle.getImage()" alt="" srcset="">
+    </div>
+      <ion-card-header>
+      <ion-card-subtitle>
+        <div class="subtitle-content">
+          <ion-chip>
+            <ion-icon name="pricetags"></ion-icon>
+            <ion-label>{{salle.prix}}</ion-label>
+          </ion-chip>
+          <div>
+            {{salle.commune}}
+          </div>
+        </div>
+      </ion-card-subtitle>
+    </ion-card-header>
+  </ion-card>
 
+  <ion-card>
+    <ion-item>
+      <ion-label>Date début</ion-label>
+      <ion-datetime displayFormat="D MMM YYYY H:mm" placeholder="Selectionner une date" 
+        [min]="getMinDate()"
+        [(ngModel)]="debutDate"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label>Date fin</ion-label>
+      <ion-datetime displayFormat="D MMM YYYY H:mm" placeholder="Selectionner une date" 
+        [min]="debutDate"
+        [(ngModel)]="finDate"></ion-datetime>
+    </ion-item>
+    <br><br>
+    <ion-button color="secondary" expand="full" size="large" (click)="reserver()" >Valider</ion-button>
+  </ion-card>
 </ion-content>

@@ -35,7 +35,7 @@ export class SallesPage implements OnInit {
     };
     this.router.navigate(['/tabs/salles-details'], navigationExtras);
   }
-  showReservation(salle : Salle) {
+  reserver(salle : Salle) {
     let navigationExtras: NavigationExtras = {
       state: {
         salle: salle
