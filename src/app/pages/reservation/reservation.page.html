@@ -7,7 +7,13 @@
 <ion-content>
   <div class="card-salle-wrapper"> 
   <ion-card *ngFor="let item of reservations">
-  
+    <img [src]="item.salle.getImage()" alt="" srcset="">
+
+    <ion-item href="#">
+      <ion-icon name="wine" slot="start"></ion-icon>
+      <ion-label>{{item.salle.nom}}</ion-label>
+    </ion-item>
+
     <ion-item href="#">
       <ion-icon name="wine" slot="start"></ion-icon>
       <ion-label>{{item.dateDebut}} - {{item.dateFin}}</ion-label>
@@ -21,11 +27,6 @@
     <ion-item>
       <ion-icon name="walk" slot="start"></ion-icon>
       <ion-label>{{item.reservationTypeId}}</ion-label>
-    </ion-item>
-
-    <ion-item>
-      <ion-icon name="walk" slot="start"></ion-icon>
-      <ion-label>{{item.salleId}}</ion-label>
     </ion-item>
   </ion-card>
 </div>

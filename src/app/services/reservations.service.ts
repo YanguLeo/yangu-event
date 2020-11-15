@@ -14,6 +14,7 @@ export class ReservationsService {
   constructor(private deviseService : DeviseService) { 
     this.reservations = this.reservations.map((x : Reservation) => {
       x.devise = this.deviseService.find(x.deviseId)
+      x.salle = this.salleService.find(x.salleId)
       return x
     })
     this.b_reservations.next(this.reservations)

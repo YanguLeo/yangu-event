@@ -22,4 +22,7 @@ export class Salle extends SalleInterface {
   getPrice (){
     return this.prix + " " + this.devise
   }
+  getImage(){
+    return 'assets/images/' + this.image;
+  }
 }

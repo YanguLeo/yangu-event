@@ -28,8 +28,4 @@ export class ReservationPage implements OnInit {
     this.s_reservation.unsubscribe()
   }
 
-  getImage(image){
-    return 'assets/images/' + image;
-  }
-
 }
