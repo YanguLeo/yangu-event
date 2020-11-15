@@ -13,4 +13,8 @@ export class SallesService {
 
   }
 
+  public find(id : Number): Salle{
+    return this.salles.find(x => x.id == id)
+  } 
+  
 }
