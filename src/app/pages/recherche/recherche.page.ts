@@ -12,6 +12,8 @@ import { SalleService } from '../../services/salle.service';
 export class RecherchePage implements OnInit {
   sallesFiltred = [];
   salles = [];
+  communesFiltred = [];
+  communes = [];
   s_salles: Subscription;
 
   constructor(private sallesService: SalleService, private router : Router) {
@@ -30,7 +32,7 @@ export class RecherchePage implements OnInit {
   search(value) {
     value = value.trim();
     if (value == "") {
-      this.sallesFiltred = [];
+      this.sallesFiltred = []
     }
     else{
       this.sallesFiltred = 
@@ -45,7 +47,8 @@ export class RecherchePage implements OnInit {
               commune_lc.indexOf(value_lc) != -1 ||
               value_lc.indexOf(commune_lc) != -1;
           }
-        )
+      )
+      
     }
   }
 

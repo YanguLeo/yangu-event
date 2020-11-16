@@ -10,10 +10,10 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo : 'salles'
+        redirectTo : 'salle'
       },
       {
-        path: 'salles',
+        path: 'salle',
         loadChildren: () => import('../salles/salles.module').then( m => m.SallesPageModule)
       },
       {

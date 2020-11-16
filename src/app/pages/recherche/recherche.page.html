@@ -1,16 +1,19 @@
-<ion-header>
-  <ion-toolbar color="warning">
-    <!-- Searchbar with danger color -->
-    <ion-searchbar color="white" (ionChange)="search($event.target.value)" ></ion-searchbar>
-  </ion-toolbar>
-</ion-header>
+<div>
+  <ion-header>
+    <ion-toolbar color="warning">
+      <!-- Searchbar with danger color -->
+      <ion-searchbar color="white" (ionChange)="search($event.target.value)" ></ion-searchbar>
+    </ion-toolbar>
+  </ion-header>
+</div>
 
 <ion-content>
 
   <div class="card-salle-wrapper">
     <ion-card class="card-salle" *ngFor="let item of sallesFiltred" >
-  
-      <img [src]="item.getImage()" alt="" srcset="">
+      <div class="poster">
+        <img [src]="item.getImage()" alt="" srcset="">
+      </div>
       <ion-card-header>
 
         <ion-card-subtitle>

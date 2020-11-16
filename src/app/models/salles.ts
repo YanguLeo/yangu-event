@@ -4,46 +4,46 @@ const sallesData : Array<SalleInterface> = [
   {
     id: 1,
     image: 'salle2.jpg',
-    nom: 'Première Salle',
-    adresse: 'Avenue Colonel Ebeya 56',
-    commune: 'Ngaliema',
-    prix : 100 ,
+    nom: 'Marie France Hotel',
+    adresse: 'Avenue Kasavubu',
+    commune: 'Kintambo',
+    prix : 1000 ,
     devise: "$",
-    faculteOccupation: '700 personne',
+    faculteOccupation: '850 personnes',
     entreprise : ''
 
   },
   {
     id: 2,
     image: 'salle3.jpg',
-    nom: 'Deuxième Salle',
-    adresse: 'Avenue Matadi  6',
+    nom: 'Dare Dare',
+    adresse: 'Avenue brikin  13',
     commune: 'Kintambo',
     prix : 500 ,
     devise: "$",
-    faculteOccupation: '850 personnes',
+    faculteOccupation: '650 personnes',
     entreprise: ''
   },
   {
     id: 3,
     image: 'salle4.jpg',
-    nom: 'Troisième Salle',
-    adresse: 'Avenue Brikin 30',
-    commune: 'Bandal',
-    prix : 600 ,
+    nom: 'Umbrella',
+    adresse: 'Avenue banana 30',
+    commune: 'Kintambo',
+    prix : 300 ,
     devise: "$",
-    faculteOccupation: '1000 personnes',
+    faculteOccupation: '200 personnes',
     entreprise: ''
   },
   {
     id: 4,
     image: 'salle4.jpg',
-    nom: ' Quatrième Salle',
-    adresse: 'Avenue Kisangani 5',
-    commune: 'Gombe',
+    nom: ' Marilynne',
+    adresse: 'Avenue Kwamouth 5',
+    commune: 'Kitambo',
     prix : 800 ,
     devise: "$",
-    faculteOccupation: '350 personnes',
+    faculteOccupation: '450 personnes',
     entreprise: ''
   }
 ];

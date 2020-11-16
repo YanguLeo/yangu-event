@@ -11,6 +11,7 @@ const devisesData : Array<DeviseInterface> = [
   }, 
 ];
 
-const devises = devisesData.map(x => new Devise(x) )
+const devises = devisesData.map(x => new Devise(x) );
+
 
 export default devises

@@ -15,10 +15,11 @@
 
 <ion-content>
 
-  <div class="card-salle-wrapper">
+  <div class="card-salle-wrapper" >
     <ion-card class="card-salle" *ngFor="let item of salles" >
-  
-      <img [src]="item.getImage()" alt="" srcset="">
+  <div class="poster">
+    <img [src]="item.getImage()" alt="" srcset="">
+  </div>
       <ion-card-header>
       
         <ion-card-subtitle>

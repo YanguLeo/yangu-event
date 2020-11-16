@@ -1,4 +1,4 @@
-.card-salle-wrapper{
+/* .card-salle-wrapper{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -8,6 +8,15 @@
     min-width: 300px;
     max-width: 380px;
     background-color: #eee;
+    img{
+        width: 100%;
+        max-width: 500px ;
+    }
+} */
+
+.poster{
+    background-color: #eee;
+    text-align: center;
     img{
         width: 100%;
         max-width: 500px ;

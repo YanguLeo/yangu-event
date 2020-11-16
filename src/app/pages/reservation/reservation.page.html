@@ -7,7 +7,7 @@
 <ion-content>
   <div class="card-reservation-wrapper"> 
   <ion-card class="card-reservation" *ngFor="let item of reservations">
-    <div class="pic">
+    <div class="poster">
       <img [src]="item.salle.getImage()" alt="" srcset="">
     </div>
 
@@ -25,7 +25,14 @@
       <ion-icon name="pricetags" slot="start"></ion-icon>
       <p>{{item.prix}} {{item.devise.nom}}</p>
     </ion-item>
-  
+    <ion-item>
+      <ion-icon name="map-outline" slot="start"></ion-icon>
+      <p>{{item.commune}} {{item.adresse}}</p>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="clipboard-outline" slot="start"></ion-icon>
+      <p></p>
+    </ion-item>
     <ion-item>
       <ion-icon name="clipboard-outline" slot="start"></ion-icon>
       <p>{{item.typeReservation}}</p>

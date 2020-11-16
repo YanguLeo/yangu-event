@@ -1,4 +1,4 @@
-.card-salle-wrapper{
+/* .card-salle-wrapper{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -9,9 +9,21 @@
     max-width: 380px;
     img{
         width: 100%;
+        max-width: 400px;
         
     }
+} */
+
+.poster{
+    background-color: #eee;
+    text-align: center;
+    img{
+        width: 100%;
+        max-width: 500px ;
+    }
 }
+
+
 .subtitle-content{
     ion-chip{
         float: right;
