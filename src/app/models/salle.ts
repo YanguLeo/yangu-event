@@ -1,5 +1,3 @@
-import { Interface } from "readline";
-
 export class SalleInterface {
   id: Number;
   image: String ; 

@@ -38,6 +38,6 @@
         [(ngModel)]="finDate"></ion-datetime>
     </ion-item>
     <br><br>
-    <ion-button color="secondary" expand="full" size="large" (click)="reserver()" >Valider</ion-button>
+    <ion-button color="secondary" expand="full" size="large" (click)="reserver()"  [routerLink]="['/tabs/reservation']" >Valider</ion-button>
   </ion-card>
 </ion-content>

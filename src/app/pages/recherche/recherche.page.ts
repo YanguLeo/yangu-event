@@ -52,6 +52,14 @@ export class RecherchePage implements OnInit {
   getImage(image){
     return 'assets/images/' + image;
   }
+  showDetails(salle : Salle) {
+    let navigationExtras: NavigationExtras = {
+      state: {
+        salle: salle
+      }
+    };
+    this.router.navigate(['/tabs/salles-details'], navigationExtras);
+  }
 
   reserver(salle : Salle) {
     let navigationExtras: NavigationExtras = {

@@ -11,19 +11,15 @@ const routes: Routes = [
     loadChildren: () => import('./pages/login/login.module').then(m => m.LoginPageModule)
   },
   {
+    path: 'intro',
+    loadChildren: () => import('./pages/intro/intro.module').then( m => m.IntroPageModule)
+  },
+  {
     path: '',
     redirectTo: 'tabs',
     pathMatch : 'full'
   },
-  {
-    path: 'reserver',
-    loadChildren: () => import('./pages/reserver/reserver.module').then( m => m.ReserverPageModule)
-  },
-  {
-    path: 'menu',
-    loadChildren: () => import('./pages/menu/menu.module').then( m => m.MenuPageModule)
-  },
-
+  
 ];
 
 @NgModule({
