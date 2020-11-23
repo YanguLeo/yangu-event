@@ -6,13 +6,13 @@
       <ion-list>
         <ion-item>
           <ion-label color="primary" position="floating">Email ou Pseudo</ion-label>
-          <ion-input autocorrect="on" autofocus="on" clearInput="true" clearOnEdit="true"  inputmode="text" placeholder="example@gmail.com" required="true"></ion-input>
+          <ion-input autocorrect="on" autofocus="on" clearInput="true" clearOnEdit="true"  type="text" placeholder="example@gmail.com" required="true" [(ngModel)]="dataUser.email"></ion-input>
           <ion-icon name="person" color="primary" slot="end"></ion-icon>
         </ion-item>
       
         <ion-item>
           <ion-label color="primary" position="floating">Mot de passe</ion-label>
-          <ion-input autocorrect="on" autofocus="on" clearInput="true" clearOnEdit="true" inputmode="password" placeholder="*******" required="true"></ion-input>
+          <ion-input autocorrect="on" autofocus="on" clearInput="true" clearOnEdit="true" type="password" placeholder="*******" required="true" [(ngModel)]="dataUser.passord"></ion-input>
           <ion-icon name="eye" color="primary" slot="end"></ion-icon>
         </ion-item>
       </ion-list>
@@ -23,7 +23,7 @@
       <br>
 
       <div>
-        <ion-button color="tertiary" expand="block" shape="round" >Connexion</ion-button>
+        <ion-button color="tertiary" expand="block" shape="round" (click)="login()" [routerLink]="['/tabs/salle']" >Connexion</ion-button>
         <ion-button color="tertiary" expand="block" shape="round" fill="outline">Inscription</ion-button>
       </div>
     

@@ -1,7 +1,7 @@
 
 import { Adresse, AdresseInterface } from './adresse';
 
-const devisesData : Array<AdresseInterface> = [
+const adresseData : Array<AdresseInterface> = [
   {
     id: 1,
     nom: 'Avenue Inongo numéro 48'
@@ -12,7 +12,7 @@ const devisesData : Array<AdresseInterface> = [
   }, 
 ];
 
-const devises = devisesData.map(z => new Adresse(z) );
+const adresse = adresseData.map(z => new Adresse(z) );
 
 
-export default devises
+export default adresse

@@ -5,11 +5,15 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './intro.page.html',
   styleUrls: ['./intro.page.scss'],
 })
-export class IntroPage implements OnInit {
+export class IntroPage {
+
+  dataUser = {
+    email: '',
+    password : ''
+  }
 
   constructor() { }
 
-  ngOnInit() {
-  }
+
 
 }

@@ -12,8 +12,6 @@ import { SalleService } from '../../services/salle.service';
 export class RecherchePage implements OnInit {
   sallesFiltred = [];
   salles = [];
-  communesFiltred = [];
-  communes = [];
   s_salles: Subscription;
 
   constructor(private sallesService: SalleService, private router : Router) {

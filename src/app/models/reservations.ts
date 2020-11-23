@@ -24,7 +24,7 @@ const reservationsData : Array<ReservationInterface> = [
     communeId: 3,
     adresseId: 1,
     clientId : 2 ,
-    salleId : 1,
+    salleId : 2,
     entrepriseId : 2,
   },
   {
@@ -37,7 +37,7 @@ const reservationsData : Array<ReservationInterface> = [
     communeId: 3,
     adresseId: 1,
     clientId : 2 ,
-    salleId: 1,
+    salleId: 3,
     entrepriseId : 3,
     
   },

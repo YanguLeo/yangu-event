@@ -18,7 +18,7 @@ const sallesData : Array<SalleInterface> = [
     image: 'salle3.jpg',
     nom: 'Dare Dare',
     adresse: 'Avenue brikin  13',
-    commune: 'Kintambo',
+    commune: 'Ngaliema',
     prix : 500 ,
     devise: "$",
     faculteOccupation: '650 personnes',
