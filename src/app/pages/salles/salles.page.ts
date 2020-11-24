@@ -43,4 +43,5 @@ export class SallesPage implements OnInit {
     };
     this.router.navigate(['/tabs/reserver'], navigationExtras);
   }
+
 }

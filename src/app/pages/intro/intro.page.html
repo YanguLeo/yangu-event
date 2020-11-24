@@ -6,33 +6,33 @@
       <ion-list>
         <ion-item>
           <ion-label color="primary" position="floating">Nom</ion-label>
-          <ion-input autocorrect="on" autofocus="on" clearInput="true" clearOnEdit="true"  inputmode="text" placeholder="example@gmail.com" required="true"></ion-input>
-          <ion-icon name="person" color="primary" slot="end"></ion-icon>
+          <ion-input autocorrect="on" autofocus="on"  [(ngModel)]="nom" clearInput="true" clearOnEdit="true"  inputmode="text" placeholder="example@gmail.com" required="true"></ion-input>
+        
         </ion-item>
         <ion-item>
           <ion-label color="primary" position="floating">Post-Nom</ion-label>
-          <ion-input autocorrect="on" autofocus="on" clearInput="true" clearOnEdit="true"  inputmode="text" placeholder="example@gmail.com" required="true"></ion-input>
-          <ion-icon name="person" color="primary" slot="end"></ion-icon>
+          <ion-input autocorrect="on" autofocus="on" [(ngModel)]="post_nom" clearInput="true" clearOnEdit="true"  inputmode="text" placeholder="example@gmail.com" required="true"></ion-input>
+        
         </ion-item>
         <ion-item>
-          <ion-label color="primary" position="floating">Ppseudo</ion-label>
-          <ion-input autocorrect="on" autofocus="on" clearInput="true" clearOnEdit="true"  inputmode="text" placeholder="example@gmail.com" required="true"></ion-input>
-          <ion-icon name="person" color="primary" slot="end"></ion-icon>
+          <ion-label color="primary" position="floating">Pseudo</ion-label>
+          <ion-input autocorrect="on" autofocus="on" [(ngModel)]="pseudo" clearInput="true" clearOnEdit="true"  inputmode="text" placeholder="example@gmail.com" required="true"></ion-input>
+        
         </ion-item>
         <ion-item>
           <ion-label color="primary" position="floating">E-mail</ion-label>
-          <ion-input autocorrect="on" autofocus="on" clearInput="true" clearOnEdit="true"  inputmode="text" placeholder="example@gmail.com" required="true"></ion-input>
-          <ion-icon name="person" color="primary" slot="end"></ion-icon>
+          <ion-input autocorrect="on" autofocus="on" [(ngModel)]="e_mail" clearInput="true" clearOnEdit="true"  inputmode="text" placeholder="example@gmail.com" required="true"></ion-input>
+        
         </ion-item>
         <ion-item>
           <ion-label color="primary" position="floating">Adresse</ion-label>
-          <ion-input autocorrect="on" autofocus="on" clearInput="true" clearOnEdit="true"  inputmode="text" placeholder="example@gmail.com" required="true"></ion-input>
-          <ion-icon name="person" color="primary" slot="end"></ion-icon>
+          <ion-input autocorrect="on" autofocus="on" [(ngModel)]="adresse" clearInput="true" clearOnEdit="true"  inputmode="text" placeholder="example@gmail.com" required="true"></ion-input>
+        
         </ion-item>
         <ion-item>
           <ion-label color="primary" position="floating">Téléphone  </ion-label>
-          <ion-input autocorrect="on" autofocus="on" clearInput="true" clearOnEdit="true"  inputmode="text" placeholder="example@gmail.com" required="true"></ion-input>
-          <ion-icon name="person" color="primary" slot="end"></ion-icon>
+          <ion-input autocorrect="on" autofocus="on" [(ngModel)]="telephone" clearInput="true" clearOnEdit="true"  inputmode="text" placeholder="example@gmail.com" required="true"></ion-input>
+        
         </ion-item>
         <ion-item>
           <ion-label color="primary" position="floating">Mot de passe</ion-label>
@@ -49,7 +49,9 @@
       <br>
 
       <div>
-        <ion-button color="tertiary" expand="block" shape="round" fill="outline">Inscription</ion-button>
+        <ion-button color="tertiary" expand="block" shape="round" fill="outline" (click)="inscriptionIntro()">
+          Inscription
+         </ion-button>
       </div>
     
       <br>
