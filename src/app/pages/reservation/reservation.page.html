@@ -1,42 +1,38 @@
 <ion-header>
   <ion-toolbar color="warning">
-    <ion-title>Mes résérvations</ion-title>
+    <ion-title>MES RESERVATIONS</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div class="card-reservation-wrapper"> 
-  <ion-card class="card-reservation" *ngFor="let item of reservations">
-    <div class="poster">
-      <img [src]="item.salle.getImage()" alt="" srcset="">
-    </div>
+  <div class="card-reservation-wrapper">
+    <ion-card class="card-reservation" *ngFor="let item of reservations">
+      <div class="poster">
+        <img [src]="item.salle.getImage()" alt="" srcset="">
+      </div>
 
-    <ion-item>
-      <ion-icon name="business-outline" slot="start"></ion-icon>
-      <p>{{item.salle.nom}}</p>
-    </ion-item>
+      <ion-item>
+        <ion-icon name="business-outline" slot="start"></ion-icon>
+        <p>{{item.salle.nom}}</p>
+      </ion-item>
 
-    <ion-item>
-      <ion-icon name="calendar-outline" slot="start"></ion-icon>
-      <p>{{item.dateDebut}} - {{item.dateFin}}</p>
-    </ion-item>
-  
-    <ion-item>
-      <ion-icon name="pricetags" slot="start"></ion-icon>
-      <p>{{item.prix}} {{item.devise.nom}}</p>
-    </ion-item>
-    <ion-item>
-      <ion-icon name="map-outline" slot="start"></ion-icon>
-      <p>{{item.commune.nom}} {{item.adresse.nom}}</p>
-    </ion-item>
-    <ion-item>
-      <ion-icon name="clipboard-outline" slot="start"></ion-icon>
-      <p></p>
-    </ion-item>
-    <ion-item>
-      <ion-icon name="clipboard-outline" slot="start"></ion-icon>
-      <p>{{item.typeReservation}}</p>
-    </ion-item>
-  </ion-card>
-</div>
+      <ion-item>
+        <ion-icon name="calendar-outline" slot="start"></ion-icon>
+        <p>{{item.dateDebut}} au {{item.dateFin}}</p>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="pricetags" slot="start"></ion-icon>
+        <p>{{item.prix}} {{item.devise.nom}}</p>
+      </ion-item>
+      <!-- <ion-item>
+        <ion-icon name="arrow-redo-outline" slot="start"></ion-icon>
+        <p>{{item.commune.nom}} {{item.adresse.nom}}</p>
+      </ion-item> -->
+      <ion-item>
+        <ion-icon name="clipboard-outline" slot="start"></ion-icon>
+        <p>{{item.typeReservation}}</p>
+      </ion-item>
+    </ion-card>
+  </div>
 </ion-content>

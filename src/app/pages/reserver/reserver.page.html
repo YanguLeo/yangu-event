@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Reservez Ici</ion-title>
+    <ion-title>RESERVEZ ICI</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -16,7 +16,7 @@
             <ion-icon name="pricetags"></ion-icon>
             <ion-label>{{salle.prix}}</ion-label>
           </ion-chip>
-          <div>
+          <div><ion-icon name="location"></ion-icon>
             {{salle.commune}}
           </div>
         </div>
@@ -39,5 +39,6 @@
     </ion-item>
     <br><br>
     <ion-button color="secondary" expand="full" size="large" (click)="reserver()"  [routerLink]="['/tabs/reservation']" >Valider</ion-button>
+    <ion-button color="secondary" expand="full" size="large" (click)="reserver()"  [routerLink]="['/salles-details']" >Annuler la résérvation</ion-button>
   </ion-card>
 </ion-content>

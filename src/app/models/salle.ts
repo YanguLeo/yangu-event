@@ -4,10 +4,10 @@ export class SalleInterface {
   nom: String;
   adresse: String;
   commune: String; 
-  prix: Number;
+  prix: string;
   devise: String;
   faculteOccupation: String;
-  entreprise :String
+  telephone :String
 
 }
 
@@ -22,7 +22,7 @@ export class Salle extends SalleInterface {
     this.prix = data.prix
     this.devise = data.devise
     this.faculteOccupation = data.faculteOccupation
-    this.entreprise = data.entreprise
+    this.telephone = data.telephone
   }
   getPrice (){
     return this.prix + " " + this.devise

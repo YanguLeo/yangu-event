@@ -1,1 +1,0 @@
-(this.$WP=this.$WP||[]).push(["Jbh1_o",(t,e)=>{"use strict";var o,a,c=t=>o(a,{locationId:t.locationId,locationType:"hotel"});return[()=>{t("default",c)},[t=>o=t.createElement,t=>a=t.default]]},["cDcdfi","eOSA73"]]);

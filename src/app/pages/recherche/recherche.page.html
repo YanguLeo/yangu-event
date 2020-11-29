@@ -2,7 +2,7 @@
   <ion-header>
     <ion-toolbar color="warning">
       <!-- Searchbar with danger color -->
-      <ion-searchbar color="white" (ionChange)="search($event.target.value)" ></ion-searchbar>
+      <ion-searchbar color="white" (ionChange)="search($event.target.value)"></ion-searchbar>
     </ion-toolbar>
   </ion-header>
 </div>
@@ -10,7 +10,7 @@
 <ion-content>
 
   <div class="card-salle-wrapper">
-    <ion-card class="card-salle" *ngFor="let item of sallesFiltred" >
+    <ion-card class="card-salle" *ngFor="let item of sallesFiltred">
       <div class="poster">
         <img [src]="item.getImage()" alt="" srcset="">
       </div>
@@ -29,29 +29,14 @@
         </ion-card-subtitle>
         <ion-card-title>{{item.nom}}</ion-card-title>
       </ion-card-header>
-    
 
-        <ion-card-content>
-          <div class="buttons-actions">
-            <ion-button color="primary" size="small"
-              (click)="showDetails(item)">Détail</ion-button>
-            <ion-button color="secondary" size="small"
-              (click)="reserver(item)">Réserver</ion-button>
-          </div>
-        </ion-card-content>
+
+      <ion-card-content>
+        <div class="buttons-actions">
+          <ion-button color="primary" size="small" (click)="showDetails(item)">Détail</ion-button>
+          <ion-button color="secondary" size="small" (click)="reserver(item)">Réserver</ion-button>
+        </div>
+      </ion-card-content>
     </ion-card>
   </div>
-  <div>
-    <ion-card>
-
-      <ion-content>
-        <ion-toolbar>
-          <ion-title>
-            Ici
-          </ion-title>
-        </ion-toolbar>
-      </ion-content>
-    </ion-card>
-  </div>
-
 </ion-content>

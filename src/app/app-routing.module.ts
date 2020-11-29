@@ -14,10 +14,18 @@ const routes: Routes = [
     path: 'intro',
     loadChildren: () => import('./pages/intro/intro.module').then( m => m.IntroPageModule)
   },
+  /* {
+    path: 'inscription',
+    loadChildren: () => import('./pages/inscription/inscription.module').then( m => m.InscriptionPageModule)
+  }, */
   {
     path: '',
     redirectTo: 'tabs',
     pathMatch : 'full'
+  },
+  {
+    path: 'creation-salle',
+    loadChildren: () => import('./pages/creation-salle/creation-salle.module').then( m => m.CreationSallePageModule)
   },
   
 ];

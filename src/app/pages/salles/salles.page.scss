@@ -33,10 +33,14 @@
 }
 ion-card-title{
     clear: both;
+    font-size: medium;
 }
 .buttons-actions{
     display: flex;
     ion-button{
         text-transform: capitalize !important;
     }
+}
+.div-commune{
+    font-size: small;
 }

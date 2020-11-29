@@ -13,7 +13,7 @@ const communesData : Array<CommuneInterface> = [
   }, 
   {
     id: 3,
-    nom : 'Ngaliema'
+    nom: 'Ngaliema'
   },
   {
     id: 4,
@@ -21,6 +21,6 @@ const communesData : Array<CommuneInterface> = [
   }
 ];
 
-const communes = communesData.map(y => new Commune(y));
+const communes = communesData.map(x => new Commune(x));
 
 export default communes

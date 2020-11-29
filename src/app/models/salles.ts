@@ -3,49 +3,38 @@ import { Salle, SalleInterface} from "./salle";
 const sallesData : Array<SalleInterface> = [
   {
     id: 1,
-    image: 'salle2.jpg',
+    image: 'marifrancehotel.jpg',
     nom: 'Marie France Hotel',
-    adresse: 'Avenue Kasavubu',
-    commune: 'Kintambo',
-    prix : 1000 ,
+    adresse: 'Wenze, Kintambo, 11 Rue Vivi, Kinshasa',
+    commune: "Kintambo",
+    prix : '0' ,
     devise: "$",
-    faculteOccupation: '850 personnes',
-    entreprise : ''
+    telephone : '(+243) 970 301 557 ',
+    faculteOccupation: '850 personnes'
 
   },
   {
     id: 2,
-    image: 'salle3.jpg',
-    nom: 'Dare Dare',
+    image: 'memling hotel.jpg',
+    nom: 'Hotel Memling',
     adresse: 'Avenue brikin  13',
-    commune: 'Ngaliema',
-    prix : 500 ,
+    commune: "Ngaliema",
+    prix : '1500' ,
     devise: "$",
-    faculteOccupation: '650 personnes',
-    entreprise: ''
+    telephone : '(+243) 824 591 331',
+    faculteOccupation: '650 personnes'
   },
   {
     id: 3,
-    image: 'salle4.jpg',
-    nom: 'Umbrella',
+    image: 'hotel-royal.jpg',
+    nom: 'Hotel Royal',
     adresse: 'Avenue banana 30',
-    commune: 'Kintambo',
-    prix : 300 ,
+    commune: "Kintambo",
+    prix : "500" ,
     devise: "$",
-    faculteOccupation: '200 personnes',
-    entreprise: ''
+    telephone : '(+243) 824 591 331',
+    faculteOccupation: '200 personnes'
   },
-  {
-    id: 4,
-    image: 'salle4.jpg',
-    nom: ' Marilynne',
-    adresse: 'Avenue Kwamouth 5',
-    commune: 'Kitambo',
-    prix : 800 ,
-    devise: "$",
-    faculteOccupation: '450 personnes',
-    entreprise: ''
-  }
 ];
 
 const salles = sallesData.map(x => new Salle(x) )

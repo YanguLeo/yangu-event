@@ -20,7 +20,7 @@ export class ReservationPage implements OnInit {
   ngOnInit() {
     this.s_reservation = this.reservationsService.b_reservations.subscribe(x => {
       this.reservations = x
-      console.log(x)
+      console.log("Réservation : ", this.reservations);
     })
   }
 

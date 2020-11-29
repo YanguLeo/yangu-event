@@ -1,9 +1,9 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Détails</ion-title>
+    <ion-title>DETAILS</ion-title>
 
-    <ion-buttons slot="primary">
-      <ion-button color="danger" shape="round" [routerLink]="['/tabs/salles']">
+    <ion-buttons slot="start">
+      <ion-button color="danger" shape="round" [routerLink]="['/tabs/salle']">
         <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -15,32 +15,38 @@
     <div class="poster">
       <img [src]="salle.getImage()" alt="" srcset="">
     </div>
-    <ion-card-header> 
+    <ion-card-header>
       <ion-card-title>
-          {{salle.nom}} 
+        {{salle.nom}}
         <ion-chip>
           <ion-icon name="pricetags"></ion-icon>
-          <ion-label>{{salle.getPrice()}}</ion-label>
+          <ion-label>Prix : {{salle.getPrice()}}</ion-label>
         </ion-chip>
       </ion-card-title>
-      
+
       <div class="item">
-        <span class="lbl">Adresse</span>
+        
+        <span class="lbl"> 
+          <ion-icon name="location"></ion-icon> &nbsp;
+          Adresse</span>
         <p>{{ salle.adresse}}</p>
       </div>
+    
       <div class="item">
-        <span class="lbl">Commune</span>
-        <p>{{ salle.commune}}</p>
+        <span class="lbl">
+          <ion-icon name="call"></ion-icon> &nbsp;
+          Téléphone</span>
+        <p>{{ salle.telephone}}</p>
       </div>
       <div class="item">
+        <ion-icon name="square-outline"></ion-icon> &nbsp;
         <span class="lbl">Occupation</span>
         <p>{{ salle.faculteOccupation}}</p>
       </div>
-   </ion-card-header>
+    </ion-card-header>
   </ion-card>
   <div class="buttons-actions">
-    <ion-button color="secondary" expand="full" size="large" 
-      (click)="reserver(salle)">Réserver</ion-button>
+    <ion-button color="secondary" expand="full" size="large" (click)="reserver(salle)">Réserver</ion-button>
   </div>
- 
+
 </ion-content>

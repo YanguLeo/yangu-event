@@ -1,7 +1,7 @@
 
 import { Adresse, AdresseInterface } from './adresse';
 
-const adresseData : Array<AdresseInterface> = [
+const adressesData : Array<AdresseInterface> = [
   {
     id: 1,
     nom: 'Avenue Inongo numéro 48'
@@ -12,7 +12,7 @@ const adresseData : Array<AdresseInterface> = [
   }, 
 ];
 
-const adresse = adresseData.map(z => new Adresse(z) );
+const adresses = adressesData.map(x => new Adresse(x) );
 
 
-export default adresse
+export default adresses

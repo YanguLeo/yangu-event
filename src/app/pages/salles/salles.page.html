@@ -1,8 +1,11 @@
 <ion-header>
-  <ion-toolbar color="warning">
+  <ion-toolbar color="#7d7d7d">
     <ion-title>
-      Liste des salles
-    </ion-title> 
+      LISTE DES SALLES
+    </ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
     <ion-buttons slot="primary">
       <ion-button color="danger" shape="round" [routerLink]="['/tabs/recherche']">
         <ion-icon slot="icon-only" name="search"></ion-icon>
@@ -15,28 +18,28 @@
 
 <ion-content>
 
-  <div class="card-salle-wrapper" >
-    <ion-card class="card-salle" *ngFor="let item of salles" >
-  <div class="poster">
-    <img [src]="item.getImage()" alt="" srcset="">
-  </div>
+  <div class="card-salle-wrapper">
+    <ion-card class="card-salle" *ngFor="let item of salles">
+      <div class="poster">
+        <img [src]="item.getImage()" alt="">
+      </div>
       <ion-card-header>
-      
+
         <ion-card-subtitle>
           <div class="subtitle-content">
             <ion-card-title>{{item.nom}}</ion-card-title>
             <br>
             <ion-chip>
               <ion-icon name="pricetags"></ion-icon>
-              <ion-label>{{item.getPrice()}}</ion-label>
+              <ion-label>Prix : &nbsp;  <ion-icon name="call"></ion-icon> &nbsp; Appellez <!-- {{item.getPrice()}} --></ion-label>
             </ion-chip>
           </div>
         </ion-card-subtitle>
-                    <div>
-                      {{item.commune}}
-                    </div>
+        <div class="div-commune">
+          <ion-icon name="location"></ion-icon> &nbsp; {{item.commune}}
+        </div>
       </ion-card-header>
-    
+
       <ion-card-content>
         <div class="buttons-actions">
           <ion-button color="primary" size="medium" (click)="showDetails(item)">Détail</ion-button>
@@ -45,6 +48,5 @@
       </ion-card-content>
     </ion-card>
   </div>
-  
-  </ion-content>
 
+</ion-content>
