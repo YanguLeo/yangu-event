@@ -26,8 +26,12 @@ export class ReserverPage implements OnInit {
   }
 
   getMinDate() {
-    const d : Date = new Date()
-    return d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate()
+    const date: Date = new Date()
+    // console.log(date.getFullYear() + "-" + date.getMonth() + "-" + date.getDate())
+    const day = date.getDate().toString().length == 1 ? "0" + date.getDate() : date.getDate()
+    let month = (date.getMonth() + 1).toString()
+    month = month.length == 1 ? "0" + month : month
+    return date.getFullYear() + "-" + month + "-" + day
   }
 
   reserver() {

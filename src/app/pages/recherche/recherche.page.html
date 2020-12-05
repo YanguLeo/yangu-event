@@ -1,8 +1,10 @@
 <div>
   <ion-header>
     <ion-toolbar color="warning">
-      <!-- Searchbar with danger color -->
-      <ion-searchbar color="white" (ionChange)="search($event.target.value)"></ion-searchbar>
+      <!-- <ion-button color="danger" shape="round" [routerLink]="['/tabs/salles']">
+        <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
+      </ion-button> -->
+      <ion-searchbar color="white" (ionChange)="search($event.target.value)"> </ion-searchbar>
     </ion-toolbar>
   </ion-header>
 </div>
@@ -20,7 +22,8 @@
           <div class="subtitle-content">
             <ion-chip>
               <ion-icon name="pricetags"></ion-icon>
-              <ion-label>{{item.prix}} {{item.devise}}</ion-label>
+              &nbsp; Prix {{item.prix}} {{item.devise}}
+
             </ion-chip>
             <div>
               {{item.commune}}
@@ -28,6 +31,13 @@
           </div>
         </ion-card-subtitle>
         <ion-card-title>{{item.nom}}</ion-card-title>
+        <ion-label>
+          <br>
+          <ion-icon name="call"></ion-icon>
+          Appelez pour une réduction.
+          <br><br>
+          <p>Cliquer sur le bouton réserver</p>
+        </ion-label>
       </ion-card-header>
 
 

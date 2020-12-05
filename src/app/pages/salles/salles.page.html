@@ -3,17 +3,17 @@
     <ion-title>
       LISTE DES SALLES
     </ion-title>
+    <!-- menu -->
     <ion-buttons slot="start">
       <ion-menu-button menu="main-menu"></ion-menu-button>
     </ion-buttons>
+    <!-- barre de recherche -->
     <ion-buttons slot="primary">
       <ion-button color="danger" shape="round" [routerLink]="['/tabs/recherche']">
         <ion-icon slot="icon-only" name="search"></ion-icon>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
-
-
 </ion-header>
 
 <ion-content>
@@ -31,7 +31,7 @@
             <br>
             <ion-chip>
               <ion-icon name="pricetags"></ion-icon>
-              <ion-label>Prix : &nbsp; <ion-icon name="call"></ion-icon> &nbsp; Appellez
+              <ion-label>Prix : &nbsp; <ion-icon name="call"></ion-icon> &nbsp;
                 <!-- {{item.getPrice()}} -->
               </ion-label>
             </ion-chip>

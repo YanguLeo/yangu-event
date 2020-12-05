@@ -1,44 +1,76 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>RESERVEZ ICI</ion-title>
+    <ion-buttons slot="start">
+      <ion-button color="danger" shape="round" [routerLink]="['/tabs/salles-details']">
+        <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-card class="card-reserver" >
+  <ion-card class="card-reserver">
     <div class="pic">
       <img [src]="salle.getImage()" alt="" srcset="">
     </div>
-      <ion-card-header>
+    <ion-card-header>
       <ion-card-subtitle>
         <div class="subtitle-content">
           <ion-chip>
             <ion-icon name="pricetags"></ion-icon>
-            <ion-label>{{salle.prix}}</ion-label>
+            <ion-label>{{salle.prix}}  {{salle.devise}}</ion-label>
           </ion-chip>
-          <div><ion-icon name="location"></ion-icon>
-            {{salle.commune}}
+         
+          <div>
+            <ion-icon name="business"></ion-icon>
+            {{salle.nom}}
           </div>
         </div>
       </ion-card-subtitle>
+
+      <!-- Détail -->
+      <br>
+      <div class="item">
+
+        <span class="lbl">
+          <ion-icon name="location"></ion-icon> &nbsp;
+          Adresse
+        </span>
+        <p>{{ salle.adresse}}</p>
+      </div>
+
+      <div class="item">
+        <span class="lbl">
+          <ion-icon name="call"></ion-icon> &nbsp;
+          Téléphone
+        </span>
+        <p>{{ salle.telephone}}</p>
+      </div>
+      <div class="item">
+        <ion-icon name="square"></ion-icon> &nbsp;
+        <span class="lbl">Occupation</span>
+        <p>{{ salle.faculteOccupation}}</p>
+      </div>
+
     </ion-card-header>
   </ion-card>
 
   <ion-card>
     <ion-item>
       <ion-label>Date début</ion-label>
-      <ion-datetime displayFormat="D MMM YYYY H:mm" placeholder="Selectionner une date" 
-        [min]="getMinDate()"
+      <ion-datetime displayFormat="D MMM YYYY H:mm" placeholder="Selectionner une date" [min]="getMinDate()"
         [(ngModel)]="debutDate"></ion-datetime>
     </ion-item>
     <ion-item>
       <ion-label>Date fin</ion-label>
-      <ion-datetime displayFormat="D MMM YYYY H:mm" placeholder="Selectionner une date" 
-        [min]="debutDate"
+      <ion-datetime displayFormat="D MMM YYYY H:mm" placeholder="Selectionner une date" [min]="debutDate"
         [(ngModel)]="finDate"></ion-datetime>
     </ion-item>
     <br><br>
-    <ion-button color="secondary" expand="full" size="large" (click)="reserver()"  [routerLink]="['/tabs/reservation']" >Valider</ion-button>
-    <ion-button color="secondary" expand="full" size="large" (click)="reserver()"  [routerLink]="['/salles-details']" >Annuler la résérvation</ion-button>
+    <ion-button color="secondary" expand="full" size="large" (click)="reserver()" [routerLink]="['/tabs/reservation']">
+      Valider</ion-button>
+    <ion-button color="secondary" expand="full" size="large" (click)="reserver()" [routerLink]="['/salles-details']">
+      Annuler la résérvation</ion-button>
   </ion-card>
 </ion-content>

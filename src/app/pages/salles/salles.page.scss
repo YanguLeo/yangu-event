@@ -44,3 +44,18 @@ ion-card-title{
 .div-commune{
     font-size: small;
 }
+
+
+.item{
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #aaa;
+    p{
+        margin: 0px;
+        font-size: 20px;
+    }
+    .lbl{
+        color: #aaa;
+        font-size: 14px;
+    }
+}

@@ -7,7 +7,7 @@ const sallesData : Array<SalleInterface> = [
     nom: 'Marie France Hotel',
     adresse: 'Wenze, Kintambo, 11 Rue Vivi, Kinshasa',
     commune: "Kintambo",
-    prix : '0' ,
+    prix : '950' ,
     devise: "$",
     telephone : '(+243) 970 301 557 ',
     faculteOccupation: '850 personnes'

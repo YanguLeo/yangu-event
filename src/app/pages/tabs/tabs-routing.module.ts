@@ -31,6 +31,22 @@ const routes: Routes = [
       {
         path: 'reserver',
         loadChildren: () => import('../reserver/reserver.module').then( m => m.ReserverPageModule)
+      },
+      {
+        path: 'login',
+        loadChildren: () => import('../login/login.module').then(m => m.LoginPageModule)
+      },
+      {
+        path: 'creation-salle',
+        loadChildren: () => import('../creation-salle/creation-salle.module').then( m => m.CreationSallePageModule)
+      },
+      {
+        path: 'compte',
+        loadChildren: () => import('../compte/compte.module').then( m => m.ComptePageModule)
+      },
+      {
+        path: 'inscription',
+        loadChildren: () => import('../inscription/inscription.module').then( m => m.InscriptionPageModule)
       }
     ]
   },
