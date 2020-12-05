@@ -40,7 +40,7 @@ export class AppComponent {
         }
         else this.router.navigate(['login'])
       })
-      
+
       this.authService.checkToken()
 
     });
@@ -51,6 +51,6 @@ export class AppComponent {
   }
 
   logout() {
-    this.authentificationService.logout()
+    this.authService.logout()
   }
 }
