@@ -1,5 +1,7 @@
+import { AuthentificationService } from './../../services/authentification.service';
 
 import { Component, } from '@angular/core';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -8,14 +10,24 @@ import { Component, } from '@angular/core';
 })
 export class LoginPage {
 
-  dataUser = {
-    email: '',
-    password : ''
-  }
-  constructor() { }
+  email = ''
+  password = ''
+  
+  constructor(private authentificationService: AuthentificationService,
+    private toastController : ToastController) { }
 
   login() {
-    console.log('Email :' + this.dataUser.email);    
-    console.log('Password :' + this.dataUser.password);
+    const auth = this.authentificationService.login(this.email, this.password)
+    if (!auth) {
+      this.presentToast('Identifiants incorrectes') 
+    }
+  }
+
+  async presentToast(msg) {
+    const toast = await this.toastController.create({
+      message: msg,
+      duration: 2000
+    });
+    toast.present();
   }
 }

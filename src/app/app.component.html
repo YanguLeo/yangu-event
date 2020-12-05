@@ -5,9 +5,11 @@
         <ion-title> Menu</ion-title>
       </ion-toolbar>
     </ion-header>
-    
+
     <ion-content>
       <ion-list>
+        <p>{{client?.getName() || ""}}</p>
+
         <ion-item [routerLink]="['/tabs/salle']">
           <ion-icon name="business-outline" slot="start"></ion-icon>
           <ion-label>Salles</ion-label>
@@ -29,12 +31,12 @@
           <ion-label>Mon Compte</ion-label>
         </ion-item>
         <ion-item>
-          <ion-icon name="log-out-outline" slot="start"></ion-icon>
-          <ion-label>Déconnexion</ion-label>
-        </ion-item>
-        <ion-item>
           <ion-icon name="information-outline" slot="start"></ion-icon>
           <ion-label>A propos</ion-label>
+        </ion-item>
+        <ion-item (click)="logout()">
+          <ion-icon name="log-out-outline" slot="start"></ion-icon>
+          <ion-label>Déconnexion</ion-label>
         </ion-item>
       </ion-list>
     </ion-content>

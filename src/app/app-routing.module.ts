@@ -17,8 +17,12 @@ const routes: Routes = [
     loadChildren: () => import('./pages/inscription/inscription.module').then( m => m.InscriptionPageModule)
   },
   {
+    path: 'loading',
+    loadChildren: () => import('./pages/loading/loading.module').then( m => m.LoadingPageModule)
+  },
+  {
     path: '',
-    redirectTo: 'tabs',
+    redirectTo: 'loading',
     pathMatch : 'full'
   },
   

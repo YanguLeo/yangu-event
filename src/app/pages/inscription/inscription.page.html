@@ -1,65 +1,124 @@
-
+<ion-header>
+  <ion-toolbar>
+    <ion-title>NOUVEAU COMPTE</ion-title>
+    <ion-buttons slot="start">
+      <ion-button color="danger" shape="round" [routerLink]="['/login']">
+        <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
 
 <ion-content>
   <div class="login-content">
     <ion-card>
-      <ion-list>
-        <ion-item>
-          <ion-label color="primary" position="floating">Nom</ion-label>
-          <ion-input autocorrect="on" autofocus="on"  [(ngModel)]="nom"  inputmode="text" placeholder="example@gmail.com" required="true"></ion-input>
-        
-        </ion-item>
-        <ion-item>
-          <ion-label color="primary" position="floating">Post-Nom</ion-label>
-          <ion-input autocorrect="on" autofocus="on" [(ngModel)]="post_nom"  inputmode="text" placeholder="example@gmail.com" required="true"></ion-input>
-        
-        </ion-item>
-        <ion-item>
-          <ion-label color="primary" position="floating">Pseudo</ion-label>
-          <ion-input autocorrect="on" autofocus="on" [(ngModel)]="pseudo"  inputmode="text" placeholder="example@gmail.com" required="true"></ion-input>
-        
-        </ion-item>
-        <ion-item>
-          <ion-label color="primary" position="floating">E-mail</ion-label>
-          <ion-input autocorrect="on" autofocus="on" [(ngModel)]="e_mail"  inputmode="text" placeholder="example@gmail.com" required="true"></ion-input>
-        
-        </ion-item>
-        <ion-item>
-          <ion-label color="primary" position="floating">Adresse</ion-label>
-          <ion-input autocorrect="on" autofocus="on" [(ngModel)]="adresse"  inputmode="text" placeholder="example@gmail.com" required="true"></ion-input>
-        
-        </ion-item>
-        <ion-item>
-          <ion-label color="primary" position="floating">Téléphone  </ion-label>
-          <ion-input autocorrect="on" autofocus="on" [(ngModel)]="telephone"  inputmode="text" placeholder="example@gmail.com" required="true"></ion-input>
-        
-        </ion-item>
-        <ion-item>
-          <ion-label color="primary" position="floating">Mot de passe</ion-label>
-          <ion-input autocorrect="on" autofocus="on" inputmode="password" placeholder="*******" required="true"></ion-input>
-          <ion-icon name="eye" color="primary" slot="end"></ion-icon>
-        </ion-item>
-        <ion-item>
-          <ion-label color="primary" position="floating">Confirmation mot de passe</ion-label>
-          <ion-input autocorrect="on" autofocus="on" inputmode="password" placeholder="*******" required="true"></ion-input>
-          <ion-icon name="eye" color="primary" slot="end"></ion-icon>
-        </ion-item>
-      </ion-list>
-      
-      <br>
+      <form [formGroup]="form" (ngSubmit)="inscription()">
+        <ion-list>
+          <ion-item>
+            <ion-label color="primary" position="floating">Nom</ion-label>
+            <ion-input autocorrect="on" autofocus="on" formControlName="nom" name="nom" inputmode="text"
+              placeholder="Votre Nom" required="true" [ngClass]="{ 'is-invalid': submitted && f.nom.errors }">
+            </ion-input>
+            <div *ngIf="submitted && f.nom.errors" class="invalid-feedback">
+              <div *ngIf="f.nom.errors.required">Le nom est obligatoire</div>
+            </div>
+          </ion-item>
+          <ion-item>
+            <ion-label color="primary" position="floating">Post-Nom</ion-label>
+            <ion-input autocorrect="on" formControlName="postnom" name="postnom" inputmode="text"
+              placeholder="Votre post-nom" required="true" [ngClass]="{ 'is-invalid': submitted && f.postnom.errors }">
+            </ion-input>
 
-      <div>
-        <ion-button color="tertiary" expand="block" shape="round" fill="outline" (click)="inscription()">
-          Inscription
-         </ion-button>
-      </div>
-    
+            <div *ngIf="submitted && f.postnom.errors" class="invalid-feedback">
+              <div *ngIf="f.postnom.errors.required">Le post nom est obligatoire</div>
+            </div>
+
+          </ion-item>
+          <ion-item>
+            <ion-label color="primary" position="floating">Pseudo</ion-label>
+            <ion-input autocorrect="on" formControlName="prenom" name="prenom" inputmode="text"
+              placeholder="Votre prenom" required="true" [ngClass]="{ 'is-invalid': submitted && f.prenom.errors }">
+            </ion-input>
+
+            <div *ngIf="submitted && f.prenom.errors" class="invalid-feedback">
+              <div *ngIf="f.prenom.errors.required">Le prenom est obligatoire</div>
+            </div>
+
+          </ion-item>
+          <ion-item>
+            <ion-label color="primary" position="floating">E-mail</ion-label>
+            <ion-input autocorrect="on" type="email" formControlName="email" name="email" inputmode="text"
+              placeholder="example@gmail.com" required="true" [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+            </ion-input>
+            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+              <div *ngIf="f.email.errors.required">L'E-mail est obligatoire</div>
+              <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+            </div>
+
+          </ion-item>
+          <ion-item>
+            <ion-label color="primary" position="floating">Adresse</ion-label>
+            <ion-input autocorrect="on" formControlName="adresse" name="adresse" inputmode="text"
+              placeholder="rue 12, kinshasa" required="true"
+              [ngClass]="{ 'is-invalid': submitted && f.adresse.errors }">
+            </ion-input>
+            <div *ngIf="submitted && f.adresse.errors" class="invalid-feedback">
+              <div *ngIf="f.adresse.errors.required">Le nom est obligatoire</div>
+            </div>
+
+          </ion-item>
+          <ion-item>
+            <ion-label color="primary" position="floating">Téléphone </ion-label>
+            <ion-input autocorrect="on" formControlName="telephone" name="telephone" inputmode="text"
+              placeholder="+243 854741226" required="true"
+              [ngClass]="{ 'is-invalid': submitted && f.telephone.errors }">
+            </ion-input>
+            <div *ngIf="submitted && f.telephone.errors" class="invalid-feedback">
+              <div *ngIf="f.telephone.errors.required">Le téléphone est obligatoire</div>
+            </div>
+          </ion-item>
+          <ion-item>
+            <ion-label color="primary" position="floating">Mot de passe</ion-label>
+            <ion-input autocorrect="on" type="password" inputmode="password" 
+              formControlName="password" name="password"
+              [ngClass]="{ 'is-invalid': submitted && f.password.errors }"
+            >
+            </ion-input>
+            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+              <div *ngIf="f.password.errors.required">Le mot de passe est obligatoire</div>
+              <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+            </div>
+            <ion-icon name="eye" color="primary" slot="end"></ion-icon>
+          </ion-item>
+          <ion-item>
+            <ion-label color="primary" position="floating">Confirmation mot de passe</ion-label>
+            <ion-input autocorrect="on" type="password" inputmode="password" formControlName="password_repeat"
+              name="password_repeat" placeholder="*******" required="true"
+              [ngClass]="{ 'is-invalid': submitted && f.password_repeat.errors }">
+            </ion-input>
+            <div *ngIf="submitted && f.password_repeat.errors" class="invalid-feedback">
+              <div *ngIf="f.password_repeat.errors.required">COnfirmez votre mot de passe</div>
+              <div *ngIf="f.password_repeat.errors.mustMatch">Passwords must match</div>
+            </div>
+            <ion-icon name="eye" color="primary" slot="end"></ion-icon>
+          </ion-item>
+        </ion-list>
+
+        <br>
+
+        <div>
+          <ion-button type="submit" color="tertiary" expand="block" shape="round" fill="outline">
+            Inscription
+          </ion-button>
+        </div>
+      </form>
+
       <br>
 
       <div style="display: flex">
         <ion-button color="tertiary" shape="round" style="width:50%">
           <ion-icon name="logo-facebook"></ion-icon>
-          &nbsp; Facebook 
+          &nbsp; Facebook
         </ion-button>
         <ion-button color="danger" shape="round" style="width:50%">
           <ion-icon name="logo-google"></ion-icon>
