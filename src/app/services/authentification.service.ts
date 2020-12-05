@@ -1,6 +1,7 @@
 import { Platform } from '@ionic/angular';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { Storage } from '@ionic/storage';
 
 const TOKEN_KEY = 'auth-token';
 @Injectable({
@@ -8,7 +9,8 @@ const TOKEN_KEY = 'auth-token';
 })
 export class AuthentificationService {
 
-authentificationState = new BehaviorSubject(false)
+  authentificationState = new BehaviorSubject(false)
+  
   constructor(private storage: Storage,
     private platform: Platform) { 
     this.platform.ready().then(() => {
@@ -17,20 +19,19 @@ authentificationState = new BehaviorSubject(false)
   }
 
   login(){
-    return this.storage.set(TOKEN_KEY, 'Jessie 781227').then(res => {
+    return this.storage.set(TOKEN_KEY, true).then(res => {
       this.authentificationState.next(true);
   })
   }
 
   logout(){
-    return this.storage.set(TOKEN_KEY).then(() => {
+    return this.storage.set(TOKEN_KEY, false).then(() => {
       this.authentificationState.next(false);
-  })
+    })
   }
 
   isAuthentificated(){
     return this.authentificationState.value;
-
   }
 
   checkToken(){
