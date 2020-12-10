@@ -1,4 +1,4 @@
-import { Client , ClientInterface} from './client';
+/* import { Client , ClientInterface} from './client';
 
 const clientsData : Array<ClientInterface> = [
   {
@@ -45,4 +45,4 @@ const clientsData : Array<ClientInterface> = [
 
 const clients = clientsData.map(x => new Client(x) )
 
-export default clients
+export default clients */

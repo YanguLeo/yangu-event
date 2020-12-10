@@ -5,6 +5,7 @@ export class ClientInterface {
   nom: String ; 
   postnom: String;
   prenom: String; 
+  image: string;
   adresse: String;
   telephone: String;
   email: String;
@@ -18,12 +19,20 @@ export class Client extends ClientInterface {
     this.nom = data.nom
     this.postnom = data.postnom
     this.prenom = data.prenom
+    this.image =data.image
     this.adresse = data.adresse
     this.telephone = data.telephone
     this.email = data.email
     this.password = data.password
   }
-  getName (){
-    return this.nom + " " + this.postnom + " " + this.prenom
-  }
+  getImage(){
+  return this.image
 }
+  
+  getName (){
+    return this.nom + " " + this.postnom
+  }
+
+
+}
+
